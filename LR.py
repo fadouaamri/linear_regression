@@ -49,3 +49,12 @@ print("Predicted scores",y_predicted)
 
 axs[2].scatter(x_test,y_test)
 axs[2].scatter(x_test,y_predicted,color="r")
+
+#Predict the score of a student if he/she studies for 9.25 hrs/day 
+nbhours=9.25
+score=regr.intercept_+nbhours*regr.coef_
+print("if a student studies for {} hours, the predicted score will be {}".format(nbhours,score[0]))
+
+#Evaluate our model 
+print("Coefficient of determination: %.2f" % r2_score(y_test, y_predicted))
+print("Mean absolute error {}".format(mean_absolute_error(y_test,y_predicted)))
