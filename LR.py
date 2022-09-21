@@ -41,3 +41,11 @@ regr.fit(x_train,y_train)
 line=regr.intercept_+x*regr.coef_
 axs[1].scatter(x,y)
 axs[1].plot(x,line,"r")
+
+#predection 
+y_predicted=regr.predict(x_test)
+print("Observed scores  ",y_test)
+print("Predicted scores",y_predicted)
+
+axs[2].scatter(x_test,y_test)
+axs[2].scatter(x_test,y_predicted,color="r")
